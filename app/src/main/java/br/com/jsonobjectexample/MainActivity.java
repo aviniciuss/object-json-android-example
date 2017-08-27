@@ -21,14 +21,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String json = generateJson(createPerson());
+        String json = objectToJson(createPerson());
         Toast.makeText(this, json, Toast.LENGTH_LONG).show();
 
         Person person = jsonToObject(json);
         Toast.makeText(this, person.toString(), Toast.LENGTH_LONG).show();
     }
 
-    private String generateJson(Person person) {
+    private String objectToJson(Person person) {
         mJsonObject = new JSONObject();
         mJsonArray = new JSONArray();
 
